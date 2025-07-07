@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Header } from '@components/Header';
+import { View } from 'react-native';
 import { useTheme } from 'styled-components';
 
 export function Groups() {
@@ -10,15 +11,8 @@ export function Groups() {
         backgroundColor: GRAY_600,
         padding: 24,
       }}
-    ></View>
+    >
+      <Header />
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
