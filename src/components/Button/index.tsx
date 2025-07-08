@@ -25,6 +25,7 @@ export function Button({ title, type = 'PRIMARY', ...rest }: Props) {
         borderRadius: 6,
         justifyContent: 'center',
         alignItems: 'center',
+        ...(rest.style && typeof rest.style === 'object' ? rest.style : {}),
       }}
     >
       <Text
