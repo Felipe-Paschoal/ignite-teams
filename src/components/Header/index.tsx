@@ -1,4 +1,5 @@
 import logoImg from '@assets/logo.png';
+import { useNavigation } from '@react-navigation/native';
 import { CaretLeftIcon } from 'phosphor-react-native';
 import { Image, TouchableOpacity, View } from 'react-native';
 import { useTheme } from 'styled-components';
@@ -9,6 +10,13 @@ type Props = {
 
 export function Header({ showBackButton }: Props) {
   const { WHITE } = useTheme().COLORS;
+
+  const navigation = useNavigation();
+
+  function handleGoBack() {
+    navigation.navigate('groups');
+  }
+
   return (
     <View
       style={{
@@ -19,7 +27,7 @@ export function Header({ showBackButton }: Props) {
       }}
     >
       {showBackButton && (
-        <TouchableOpacity style={{ flex: 1 }}>
+        <TouchableOpacity onPress={handleGoBack} style={{ flex: 1 }}>
           <CaretLeftIcon color={WHITE} size={32} />
         </TouchableOpacity>
       )}
