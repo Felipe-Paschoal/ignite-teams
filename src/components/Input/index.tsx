@@ -1,11 +1,16 @@
 import { TextInput, TextInputProps } from 'react-native';
 import { useTheme } from 'styled-components';
 
-export function Input({ ...rest }: TextInputProps) {
+type Props = TextInputProps & {
+  inputRef?: React.RefObject<TextInput>;
+};
+
+export function Input({ inputRef, ...rest }: Props) {
   const theme = useTheme();
 
   return (
     <TextInput
+      ref={inputRef}
       {...rest}
       style={{
         flex: 1,
